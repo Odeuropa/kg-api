@@ -1,0 +1,51 @@
+{
+    "proto": {
+        "smell": "?_smell",
+        "emission": "?emission$anchor",
+        "time": "$time:hasTime/time:hasBeginning$required",
+        "place": {
+            "id": "$crm:P7_took_place_at",
+            "type": "$crm:P137_exemplifies",
+            "label": "$rdfs:label|gn:name$required"
+        },
+        "source": {
+            "id": "$od:F3_had_source/crm:P137_exemplifies",
+            "label": "$skos:prefLabel$required$lang"
+        },
+        "carrier": {
+            "id": "$od:F4_had_carrier/crm:P137_exemplifies",
+            "label": "$skos:prefLabel$required$lang"
+        },
+        "quality": {
+            "id": "$crm:P17_was_motivated_by ?experience. ?s crm:P67_refers_to$reverse$anchor",
+            "type": "$crm:P2_has_type$required",
+            "label": "$crm:P141_assigned/skos:prefLabel$required$lang"
+        }
+    },
+    "$where": [
+        "?emission od:F1_generated ?smell",
+        "?experience od:F2_perceived ?smell"
+    ],
+    "$values": {
+        "?_smell": "http://data.odeuropa.eu/smell/ea146279-3991-5e60-928c-fd245a38e2e7"
+    },
+    "$lang": "en",
+    "$langTag": "hide",
+    "$from": "http://www.ontotext.com/explicit",
+    "$prefixes": {
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "onto": "http://www.ontotext.com/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "od": "http://data.odeuropa.eu/ontology/",
+        "crm": "http://erlangen-crm.org/current/",
+        "reo": "https://read-it.acc.hum.uu.nl/ontology#",
+        "ecrm": "http://erlangen-crm.org/current/",
+        "time": "http://www.w3.org/2006/time#",
+        "gn": "http://www.geonames.org/ontology#"
+    },
+    "grlc": {
+        "defaults": [{
+            "smell": "http://data.odeuropa.eu/smell/ea146279-3991-5e60-928c-fd245a38e2e7"
+        }]
+    }
+}

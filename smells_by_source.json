@@ -1,0 +1,44 @@
+{
+    "proto": {
+        "smell": "?smell",
+        "emission": "?emission$anchor",
+        "source": {
+            "id": "$od:F3_had_source/crm:P137_exemplifies$required$var:_source",
+            "label": "$skos:prefLabel$required$lang"
+        },
+        "time": "$time:hasTime/time:hasBeginning$required$var:time",
+        "requested_range": {
+            "start": "?_startyear_number",
+            "end": "?_endyear_number"
+        }
+    },
+    "$where": "?emission od:F1_generated ?smell",
+    "$filter": "year(?time) >= xsd:integer( ?_startyear_number ) && year(?time) <= xsd:integer(?_endyear_number) ",
+    "$values": {
+        "?_source": "http://data.odeuropa.eu/vocabulary/olfactory-objects/267"
+    },
+    "$lang": "en",
+    "$langTag": "hide",
+    "$from": "http://www.ontotext.com/explicit",
+    "$prefixes": {
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "onto": "http://www.ontotext.com/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "od": "http://data.odeuropa.eu/ontology/",
+        "crm": "http://erlangen-crm.org/current/",
+        "reo": "https://read-it.acc.hum.uu.nl/ontology#",
+        "ecrm": "http://erlangen-crm.org/current/",
+        "time": "http://www.w3.org/2006/time#",
+        "gn": "http://www.geonames.org/ontology#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "grlc": {
+        "defaults": [{
+            "source": "http://data.odeuropa.eu/vocabulary/olfactory-objects/267",
+            "startyear": "0",
+            "endyear": "2000"
+        }],
+        "tags": ["search"],
+        "pagination": 50
+    }
+}
